@@ -11,7 +11,6 @@ import SendBirdCalls
 
 class ConnectionManager {
     struct Config {
-//        let appId: String
         let userId: String
         let accessToken: String?
         
@@ -24,8 +23,6 @@ class ConnectionManager {
             return Config(userId: userId, accessToken: accessToken)
         }
     }
-    
-//    static var config: Config?
     
     static func disconnect(completionHandler: (() -> Void)?) {
         if let pushToken = UserDefaults.standard.value(forKey: "voipPushToken") as? Data {
@@ -51,40 +48,33 @@ class ConnectionManager {
             return
         }
         
-//        SendbirdUI.initialize(applicationId: config.appId) { _ in
-            SBUGlobals.currentUser = .init(userId: config.userId)
-            SBUGlobals.accessToken = config.accessToken
-//            SBUGlobals.applicationId = config.appId
+        SBUGlobals.currentUser = .init(userId: config.userId)
+        SBUGlobals.accessToken = config.accessToken
+        SendBirdCall.executeOn(queue: .main)
+        
+        SendbirdUI.connect { _, error in
+            guard error == nil else {
+                completionHandler?(error)
+                return
+            }
             
-//            SendBirdCall.configure(appId: config.appId)
-            SendBirdCall.executeOn(queue: .main)
-            
-            SendbirdUI.connect { user, error in
-                guard let user = user, error == nil else {
+            let params = AuthenticateParams(userId: config.userId, accessToken: config.accessToken)
+            SendBirdCall.authenticate(with: params) { user, error in
+                guard user != nil, error == nil else {
                     completionHandler?(error)
                     return
                 }
                 
-                let params = AuthenticateParams(userId: config.userId, accessToken: config.accessToken)
-                SendBirdCall.authenticate(with: params) { user, error in
-                    guard user != nil, error == nil else {
-                        completionHandler?(error)
-                        return
+                if let pushToken = UserDefaults.standard.value(forKey: "voipPushToken") as? Data {
+                    SendBirdCall.registerVoIPPush(token: pushToken) { error in
+                        print("Registered VoIP push with error: \(String(describing: error?.localizedDescription))")
                     }
-                    
-                    if let pushToken = UserDefaults.standard.value(forKey: "voipPushToken") as? Data {
-                        SendBirdCall.registerVoIPPush(token: pushToken) { error in
-                            print("Registered VoIP push with error: \(error)")
-                        }
-                    }
- 
-                    UserDefaults.standard.set(config.userId, forKey: "userId")
-                    UserDefaults.standard.set(config.accessToken, forKey: "accessToken")
-//                    UserDefaults.standard.set(config.appId, forKey: "applicationId")
-                    
-                    completionHandler?(nil)
                 }
+                
+                UserDefaults.standard.set(config.userId, forKey: "userId")
+                UserDefaults.standard.set(config.accessToken, forKey: "accessToken")
+                completionHandler?(nil)
             }
-//        }
+        }
     }
 }

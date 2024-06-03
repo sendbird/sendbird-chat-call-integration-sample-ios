@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: sendbird-chat-call-integration-sample-ios
+  descritpion: iOS Sample for integrating Sendbird Calls with Sendbird Chat SDK
+  annotations:
+    github.com/project-slug: sendbird/sendbird-chat-call-integration-sample-ios
+spec:
+  type: sample
+  lifecycle: production
+  owner: dep-client-platform
+  system: sendbird-calls
+

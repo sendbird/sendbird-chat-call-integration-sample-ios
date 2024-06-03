@@ -10,7 +10,6 @@ import SendbirdUIKit
 import SendBirdCalls
 
 class SignInViewController: UIViewController {
-//    @IBOutlet weak var appIdTextField: UITextField!
     @IBOutlet weak var userIdTextField: UITextField!
     @IBOutlet weak var accessTokenTextField: UITextField!
 
@@ -21,16 +20,11 @@ class SignInViewController: UIViewController {
 
         self.userIdTextField.text = UserDefaults.standard.value(forKey: "userId") as? String
         self.accessTokenTextField.text = UserDefaults.standard.value(forKey: "accessToken") as? String
-//        self.appIdTextField.text = UserDefaults.standard.value(forKey: "applicationId") as? String
         self.versionLabel.text = "SDK Calls v\(SendBirdCall.sdkVersion) UIKit v\(SendbirdUI.shortVersion)"
     }
     
     // MARK: - ManualSignInDelegate
     @IBAction func didTapSignIn() {
-//        guard let appId = self.appIdTextField.text else {
-//            self.presentErrorAlert(message: "Please enter valid app ID")
-//            return
-//        }
         guard let userId = self.userIdTextField.text else {
             self.presentErrorAlert(message: "Please enter valid user ID")
             return
@@ -41,17 +35,10 @@ class SignInViewController: UIViewController {
     }
 
     func signIn(userId: String, accessToken: String?) {
-        SendBirdCall.executeOn(queue: .main)
-        
-        SBUModuleSet.GroupChannelModule.InputComponent = CustomInputComponent.self
-        SBUModuleSet.GroupChannelModule.ListComponent = CustomListComponent.self
-        SBUViewControllerSet.GroupChannelViewController = CustomGroupChannelViewController.self
-        
         self.signInButton.isEnabled = false
         
         let config = ConnectionManager.Config(userId: userId, accessToken: accessToken)
         ConnectionManager.connect(config: config) { error in
-            
             self.signInButton.isEnabled = true
             
             if let error = error {

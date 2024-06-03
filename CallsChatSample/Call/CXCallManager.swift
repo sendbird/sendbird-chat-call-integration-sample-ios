@@ -196,7 +196,7 @@ extension DirectCallEndResult {
 
 extension UIApplication {
     func showCallController(with call: DirectCall) {
-        DispatchQueue.main.async { [weak self] in
+        DispatchQueue.main.async {
             let callingViewController = CallingViewController(nibName: "CallingViewController", bundle: nil)
             callingViewController.call = call
             
