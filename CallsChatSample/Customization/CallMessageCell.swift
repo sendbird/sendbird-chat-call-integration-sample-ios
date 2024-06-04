@@ -92,7 +92,7 @@ open class CallMessageCell: SBUContentBaseMessageCell {
            let reason = callInfo.endResult {
             switch reason {
             case .completed:
-                self.callLabel.text = "\(duration)"
+                self.callLabel.text = "\(duration.durationText())"
             case .unknown, .none:
                 self.callLabel.text = "Unknown Error"
             default:
