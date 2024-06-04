@@ -170,17 +170,13 @@ class MySettingsCell: UITableViewCell {
             )
             self.titleLabel.text = "Do not disturb"
         case .signOut:
-//            SBUIconSetType.iconLeave.image(
-//                with: self.theme?.leaveTintColor,
-//                to: SBUIconSetType.Metric.defaultIconSize
-//            )
-            self.typeIcon.image = UIImage(named: "iconLeave")?
-                .sbu_with(tintColor: isDarkMode ? nil : .white)
-                .sbu_resize(with: CGSize(width: 18, height: 18))
-                .sbu_withBackground(
-                    color: isDarkMode ? SBUColorSet.error200 : SBUColorSet.error300,
-                    margin: 3,
-                    circle: true
+            self.typeIcon.image = SBUIconSetType.iconLeave.image(
+                with: .white,
+                to: CGSize(width: 18, height: 18)
+            ).sbu_withBackground(
+                color: SBUColorSet.error300,
+                margin: 3,
+                circle: true
             )
             self.titleLabel.text = "Log Out"
             self.rightSwitch.isHidden = true

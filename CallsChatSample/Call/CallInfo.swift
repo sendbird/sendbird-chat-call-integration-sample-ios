@@ -18,19 +18,10 @@ class CallInfo: NSObject, Decodable {
     let duration: Int64?
     let endResult: DirectCallEndResult?
     
-    init?(from dictionary: [String: Any]) {
-        guard let callId = dictionary["call_id"] as? String else { return nil }
-        guard let callType = dictionary["call_type"] as? String else { return nil }
-        guard let isVideoCall = dictionary["is_video_call"] as? Bool else { return nil }
-        
-        self.callId = callId
-        self.callType = callType
-        self.isVideoCall = isVideoCall
-        
-        self.duration = dictionary["duration"] as? Int64
-        if let endResult = dictionary["end_result"] as? String {
-            self.endResult = DirectCallEndResult(rawValue: endResult)
-        } else { self.endResult = nil }
+    static func make(from dictionary: [String: Any]) -> CallInfo? {
+        guard let data = try? JSONSerialization.data(withJSONObject: dictionary) else { return nil }
+        let decoder = JSONDecoder()
+        return try? decoder.decode(CallInfo.self, from: data)
     }
     
     enum CodingKeys: String, CodingKey {

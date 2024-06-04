@@ -148,13 +148,6 @@ class CallingViewController: UIViewController {
         self.remoteMuteStatusLabel.isHidden = isEnabled
     }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-//        guard let nav = self.presentingViewController as? UINavigationController,
-//              let chatViewController = nav.children.first as? GroupChannelChatViewController else { return }
-//        DispatchQueue.main.async {
-//            chatViewController.loadPreviousMessages(initial: true)
-//        }
-//    }
     func activateTimer() {
         self.statusLabel.text = "00:00"
         
@@ -190,10 +183,6 @@ extension CallingViewController: DirectCallDelegate {
         defer {
             self.dismiss(animated: true)
         }
-        
-        guard let enderId = call.endedBy?.userId,
-              let myId = SendBirdCall.currentUser?.userId,
-              enderId != myId else { return }
         
         guard let call = SendBirdCall.getCall(forCallId: self.call.callId) else { return }
         CXCallManager.shared.endCXCall(call)

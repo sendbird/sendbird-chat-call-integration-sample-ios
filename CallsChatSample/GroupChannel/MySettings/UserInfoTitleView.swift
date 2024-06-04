@@ -226,9 +226,20 @@ class UserInfoTitleView: UIView {
     }
     
     func configure(user: SBUUser) {
-        if let urlString = user.profileURL {
+        if let urlString = user.profileURL, !urlString.isEmpty {
             self.coverImage.loadImage(urlString: urlString)
+        } else {
+            self.coverImage.image = SBUIconSetType.iconUser.image(
+                with: .white,
+                to: CGSize(width: 80, height: 80)
+            ).sbu_withBackground(
+                color: .gray,
+                margin: 3,
+                circle: true
+            )
+            self.coverImage.contentMode = .center
         }
+        
         self.userNicknameLabel.text = user.nickname ?? user.userId
         
         self.userIdTitleLabel.text = "User ID"

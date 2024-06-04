@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		52F0460E2C096D34002A00C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F0460D2C096D34002A00C9 /* AppDelegate.swift */; };
 		52F046102C096D34002A00C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F0460F2C096D34002A00C9 /* SceneDelegate.swift */; };
-		52F046122C096D34002A00C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F046112C096D34002A00C9 /* ViewController.swift */; };
 		52F046152C096D34002A00C9 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 52F046142C096D34002A00C9 /* Base */; };
 		52F046172C096D36002A00C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52F046162C096D36002A00C9 /* Assets.xcassets */; };
 		52F0461A2C096D36002A00C9 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 52F046192C096D36002A00C9 /* Base */; };
@@ -17,7 +16,6 @@
 		52F046282C096F87002A00C9 /* CXProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F046272C096F87002A00C9 /* CXProvider.swift */; };
 		52F0462C2C096FED002A00C9 /* CallingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F0462A2C096FDA002A00C9 /* CallingViewController.swift */; };
 		52F0462E2C097039002A00C9 /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F0462D2C097039002A00C9 /* ConnectionManager.swift */; };
-		52F046302C097178002A00C9 /* CallingGroupChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F0462F2C097178002A00C9 /* CallingGroupChannelViewController.swift */; };
 		52F0463E2C0972D2002A00C9 /* CallInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F0463D2C0972D2002A00C9 /* CallInfo.swift */; };
 		52F0463F2C0986A0002A00C9 /* CallingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52F0462B2C096FDA002A00C9 /* CallingViewController.xib */; };
 		52F046412C09878F002A00C9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F046402C09878E002A00C9 /* SignInViewController.swift */; };
@@ -26,31 +24,19 @@
 		52F0464D2C098F66002A00C9 /* MySettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F046462C098F66002A00C9 /* MySettingsViewController.swift */; };
 		52F0464E2C098F66002A00C9 /* UserInfoTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F046472C098F66002A00C9 /* UserInfoTitleView.swift */; };
 		52F0464F2C098F66002A00C9 /* MainChannelTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F046492C098F66002A00C9 /* MainChannelTabbarController.swift */; };
-		52F046512C099576002A00C9 /* SendbirdUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F046502C099576002A00C9 /* SendbirdUIKit.framework */; };
-		52F046522C099576002A00C9 /* SendbirdUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52F046502C099576002A00C9 /* SendbirdUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		52F046562C099F48002A00C9 /* SendbirdChatSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 52F046552C099F48002A00C9 /* SendbirdChatSDK */; };
-		DFA0EB8F5D8CBF4D14687A93 /* Pods_CallsChatSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74120BA0E30A51B3AEB25B59 /* Pods_CallsChatSample.framework */; };
+		52FC3FE02C0EA99D00C6E213 /* CustomGroupChannelList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC3FDF2C0EA99D00C6E213 /* CustomGroupChannelList.swift */; };
+		52FC3FE22C0EA9A400C6E213 /* CustomGroupChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC3FE12C0EA9A400C6E213 /* CustomGroupChannel.swift */; };
+		52FC3FE42C0EAA1D00C6E213 /* CallMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC3FE32C0EAA1D00C6E213 /* CallMessageCell.swift */; };
+		52FC3FE62C0EAA5200C6E213 /* CustomInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FC3FE52C0EAA5200C6E213 /* CustomInputView.swift */; };
+		52FC3FEA2C0EAD9900C6E213 /* SendbirdUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 52FC3FE92C0EAD9900C6E213 /* SendbirdUIKit */; };
+		52FC3FED2C0EADAD00C6E213 /* SendBirdCalls in Frameworks */ = {isa = PBXBuildFile; productRef = 52FC3FEC2C0EADAD00C6E213 /* SendBirdCalls */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		52F046532C099576002A00C9 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				52F046522C099576002A00C9 /* SendbirdUIKit.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		52F0460A2C096D34002A00C9 /* CallsChatSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CallsChatSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52F0460D2C096D34002A00C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52F0460F2C096D34002A00C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		52F046112C096D34002A00C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		52F046142C096D34002A00C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52F046162C096D36002A00C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52F046192C096D36002A00C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,7 +46,6 @@
 		52F0462A2C096FDA002A00C9 /* CallingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallingViewController.swift; sourceTree = "<group>"; };
 		52F0462B2C096FDA002A00C9 /* CallingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CallingViewController.xib; sourceTree = "<group>"; };
 		52F0462D2C097039002A00C9 /* ConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
-		52F0462F2C097178002A00C9 /* CallingGroupChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallingGroupChannelViewController.swift; sourceTree = "<group>"; };
 		52F0463D2C0972D2002A00C9 /* CallInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallInfo.swift; sourceTree = "<group>"; };
 		52F046402C09878E002A00C9 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		52F046422C098A78002A00C9 /* CallsChatSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CallsChatSample.entitlements; sourceTree = "<group>"; };
@@ -70,9 +55,10 @@
 		52F046472C098F66002A00C9 /* UserInfoTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoTitleView.swift; sourceTree = "<group>"; };
 		52F046492C098F66002A00C9 /* MainChannelTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainChannelTabbarController.swift; sourceTree = "<group>"; };
 		52F046502C099576002A00C9 /* SendbirdUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SendbirdUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		74120BA0E30A51B3AEB25B59 /* Pods_CallsChatSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CallsChatSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DCF3E7F67963EC380B354B82 /* Pods-CallsChatSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CallsChatSample.debug.xcconfig"; path = "Target Support Files/Pods-CallsChatSample/Pods-CallsChatSample.debug.xcconfig"; sourceTree = "<group>"; };
-		FBEDEDF1C567344BE009AF01 /* Pods-CallsChatSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CallsChatSample.release.xcconfig"; path = "Target Support Files/Pods-CallsChatSample/Pods-CallsChatSample.release.xcconfig"; sourceTree = "<group>"; };
+		52FC3FDF2C0EA99D00C6E213 /* CustomGroupChannelList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGroupChannelList.swift; sourceTree = "<group>"; };
+		52FC3FE12C0EA9A400C6E213 /* CustomGroupChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGroupChannel.swift; sourceTree = "<group>"; };
+		52FC3FE32C0EAA1D00C6E213 /* CallMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallMessageCell.swift; sourceTree = "<group>"; };
+		52FC3FE52C0EAA5200C6E213 /* CustomInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,9 +66,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52F046512C099576002A00C9 /* SendbirdUIKit.framework in Frameworks */,
-				DFA0EB8F5D8CBF4D14687A93 /* Pods_CallsChatSample.framework in Frameworks */,
+				52FC3FEA2C0EAD9900C6E213 /* SendbirdUIKit in Frameworks */,
 				52F046562C099F48002A00C9 /* SendbirdChatSDK in Frameworks */,
+				52FC3FED2C0EADAD00C6E213 /* SendBirdCalls in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +80,6 @@
 			children = (
 				52F0460C2C096D34002A00C9 /* CallsChatSample */,
 				52F0460B2C096D34002A00C9 /* Products */,
-				FAB64532B9ED56EACD439912 /* Pods */,
 				902B6B7DFE43BE47C1C46000 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -110,14 +95,14 @@
 		52F0460C2C096D34002A00C9 /* CallsChatSample */ = {
 			isa = PBXGroup;
 			children = (
-				52F046422C098A78002A00C9 /* CallsChatSample.entitlements */,
+				52FC3FE72C0EAA9300C6E213 /* Customization */,
 				52F046242C096F61002A00C9 /* Call */,
 				52F0460D2C096D34002A00C9 /* AppDelegate.swift */,
 				52F0462D2C097039002A00C9 /* ConnectionManager.swift */,
 				52F0460F2C096D34002A00C9 /* SceneDelegate.swift */,
-				52F046112C096D34002A00C9 /* ViewController.swift */,
 				52F046402C09878E002A00C9 /* SignInViewController.swift */,
 				52F0464A2C098F66002A00C9 /* GroupChannel */,
+				52F046422C098A78002A00C9 /* CallsChatSample.entitlements */,
 				52F046132C096D34002A00C9 /* Main.storyboard */,
 				52F046162C096D36002A00C9 /* Assets.xcassets */,
 				52F046182C096D36002A00C9 /* LaunchScreen.storyboard */,
@@ -141,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				52F0462A2C096FDA002A00C9 /* CallingViewController.swift */,
-				52F0462F2C097178002A00C9 /* CallingGroupChannelViewController.swift */,
 				52F0462B2C096FDA002A00C9 /* CallingViewController.xib */,
 			);
 			path = View;
@@ -175,22 +159,23 @@
 			path = GroupChannel;
 			sourceTree = "<group>";
 		};
+		52FC3FE72C0EAA9300C6E213 /* Customization */ = {
+			isa = PBXGroup;
+			children = (
+				52FC3FDF2C0EA99D00C6E213 /* CustomGroupChannelList.swift */,
+				52FC3FE32C0EAA1D00C6E213 /* CallMessageCell.swift */,
+				52FC3FE12C0EA9A400C6E213 /* CustomGroupChannel.swift */,
+				52FC3FE52C0EAA5200C6E213 /* CustomInputView.swift */,
+			);
+			path = Customization;
+			sourceTree = "<group>";
+		};
 		902B6B7DFE43BE47C1C46000 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				52F046502C099576002A00C9 /* SendbirdUIKit.framework */,
-				74120BA0E30A51B3AEB25B59 /* Pods_CallsChatSample.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FAB64532B9ED56EACD439912 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				DCF3E7F67963EC380B354B82 /* Pods-CallsChatSample.debug.xcconfig */,
-				FBEDEDF1C567344BE009AF01 /* Pods-CallsChatSample.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,12 +185,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52F0461E2C096D36002A00C9 /* Build configuration list for PBXNativeTarget "CallsChatSample" */;
 			buildPhases = (
-				930C5CDA2FB206263AB26594 /* [CP] Check Pods Manifest.lock */,
 				52F046062C096D34002A00C9 /* Sources */,
 				52F046072C096D34002A00C9 /* Frameworks */,
 				52F046082C096D34002A00C9 /* Resources */,
-				D27536C87741857B7FB62E21 /* [CP] Embed Pods Frameworks */,
-				52F046532C099576002A00C9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -214,6 +196,8 @@
 			name = CallsChatSample;
 			packageProductDependencies = (
 				52F046552C099F48002A00C9 /* SendbirdChatSDK */,
+				52FC3FE92C0EAD9900C6E213 /* SendbirdUIKit */,
+				52FC3FEC2C0EADAD00C6E213 /* SendBirdCalls */,
 			);
 			productName = CallsChatSample;
 			productReference = 52F0460A2C096D34002A00C9 /* CallsChatSample.app */;
@@ -245,6 +229,8 @@
 			mainGroup = 52F046012C096D34002A00C9;
 			packageReferences = (
 				52F046542C099F48002A00C9 /* XCRemoteSwiftPackageReference "sendbird-chat-sdk-ios" */,
+				52FC3FE82C0EAD9900C6E213 /* XCRemoteSwiftPackageReference "sendbird-uikit-ios" */,
+				52FC3FEB2C0EADAD00C6E213 /* XCRemoteSwiftPackageReference "sendbird-calls-ios" */,
 			);
 			productRefGroup = 52F0460B2C096D34002A00C9 /* Products */;
 			projectDirPath = "";
@@ -269,60 +255,19 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		930C5CDA2FB206263AB26594 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CallsChatSample-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D27536C87741857B7FB62E21 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CallsChatSample/Pods-CallsChatSample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CallsChatSample/Pods-CallsChatSample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CallsChatSample/Pods-CallsChatSample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		52F046062C096D34002A00C9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52FC3FE22C0EA9A400C6E213 /* CustomGroupChannel.swift in Sources */,
 				52F046262C096F71002A00C9 /* CXCallManager.swift in Sources */,
 				52F0464D2C098F66002A00C9 /* MySettingsViewController.swift in Sources */,
+				52FC3FE42C0EAA1D00C6E213 /* CallMessageCell.swift in Sources */,
 				52F0463E2C0972D2002A00C9 /* CallInfo.swift in Sources */,
-				52F046302C097178002A00C9 /* CallingGroupChannelViewController.swift in Sources */,
+				52FC3FE02C0EA99D00C6E213 /* CustomGroupChannelList.swift in Sources */,
 				52F0464E2C098F66002A00C9 /* UserInfoTitleView.swift in Sources */,
 				52F046282C096F87002A00C9 /* CXProvider.swift in Sources */,
-				52F046122C096D34002A00C9 /* ViewController.swift in Sources */,
 				52F0462E2C097039002A00C9 /* ConnectionManager.swift in Sources */,
 				52F0464C2C098F66002A00C9 /* MySettingsCell.swift in Sources */,
 				52F0460E2C096D34002A00C9 /* AppDelegate.swift in Sources */,
@@ -331,6 +276,7 @@
 				52F046412C09878F002A00C9 /* SignInViewController.swift in Sources */,
 				52F0464B2C098F66002A00C9 /* ChannelListViewController.swift in Sources */,
 				52F0462C2C096FED002A00C9 /* CallingViewController.swift in Sources */,
+				52FC3FE62C0EAA5200C6E213 /* CustomInputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,7 +423,6 @@
 		};
 		52F0461F2C096D36002A00C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DCF3E7F67963EC380B354B82 /* Pods-CallsChatSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -511,7 +456,6 @@
 		};
 		52F046202C096D36002A00C9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FBEDEDF1C567344BE009AF01 /* Pods-CallsChatSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -575,6 +519,22 @@
 				kind = branch;
 			};
 		};
+		52FC3FE82C0EAD9900C6E213 /* XCRemoteSwiftPackageReference "sendbird-uikit-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sendbird/sendbird-uikit-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.23.0;
+			};
+		};
+		52FC3FEB2C0EADAD00C6E213 /* XCRemoteSwiftPackageReference "sendbird-calls-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sendbird/sendbird-calls-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.10.19;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -582,6 +542,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 52F046542C099F48002A00C9 /* XCRemoteSwiftPackageReference "sendbird-chat-sdk-ios" */;
 			productName = SendbirdChatSDK;
+		};
+		52FC3FE92C0EAD9900C6E213 /* SendbirdUIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52FC3FE82C0EAD9900C6E213 /* XCRemoteSwiftPackageReference "sendbird-uikit-ios" */;
+			productName = SendbirdUIKit;
+		};
+		52FC3FEC2C0EADAD00C6E213 /* SendBirdCalls */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52FC3FEB2C0EADAD00C6E213 /* XCRemoteSwiftPackageReference "sendbird-calls-ios" */;
+			productName = SendBirdCalls;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

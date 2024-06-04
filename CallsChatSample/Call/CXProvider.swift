@@ -12,7 +12,7 @@ import UIKit
 extension CXProviderConfiguration {
     // The app's provider configuration, representing its CallKit capabilities
     static var `default`: CXProviderConfiguration {
-        let providerConfiguration = CXProviderConfiguration(localizedName: "SendBird Calls")
+        let providerConfiguration = CXProviderConfiguration()
         if let image = UIImage(named: "icCallkitSb") {
             providerConfiguration.iconTemplateImageData = image.pngData()
         }

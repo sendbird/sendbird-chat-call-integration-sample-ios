@@ -22,36 +22,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let appId = "C53EDF5A-9EEF-48EA-99D3-2139E20D2BEE"
+        let appId = <#AppID#>
         SendbirdUI.initialize(applicationId: appId) { _ in
             SendBirdCall.configure(appId: appId)
             SendBirdCall.executeOn(queue: .main)
+            SendBirdCall.addDelegate(self, identifier: "com.sendbird.calls.delegate")
+            
+            SBUModuleSet.GroupChannelModule.InputComponent = CustomInputComponent.self
+            SBUModuleSet.GroupChannelModule.ListComponent = CustomListComponent.self
+            SBUModuleSet.GroupChannelListModule.ListComponent = CustomChannelListComponent.self
+            SBUViewControllerSet.GroupChannelViewController = CustomGroupChannelViewController.self
         }
-        SBCLogger.setLoggerLevel(.info)
-        
-        SBUGlobals.accessToken = ""
-        SendbirdUI.config.common.isUsingDefaultUserProfileEnabled = true
-        
-        // Reply
-        SendbirdUI.config.groupChannel.channel.replyType = .quoteReply
-        // Channel List - Typing indicator
-        SendbirdUI.config.groupChannel.channelList.isTypingIndicatorEnabled = true
-        // Channel List - Message receipt state
-        SendbirdUI.config.groupChannel.channelList.isMessageReceiptStatusEnabled = true
-        // User Mention
-        SendbirdUI.config.groupChannel.channel.isMentionEnabled = true
-        // GroupChannel - Voice Message
-        SendbirdUI.config.groupChannel.channel.isVoiceMessageEnabled = true
-        // GroupChannel - suggested replies
-        SendbirdUI.config.groupChannel.channel.isSuggestedRepliesEnabled = true
-        // GroupChannel - form type message
-        SendbirdUI.config.groupChannel.channel.isFormTypeMessageEnabled = true
-        
         
         self.initializeRemoteNotification()
-        
-        
-        SendBirdCall.addDelegate(self, identifier: "com.sendbird.sample4.calls.delegate")
         self.voipRegistration()
         
         return true
